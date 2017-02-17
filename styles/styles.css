@@ -1,0 +1,21 @@
+body{
+  min-width: 840px;
+}
+#block-center{
+  background-color: rgba(119, 15, 54, 0.87);
+  margin: 200px 200px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  color: white;
+  font-family: Helvetica;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+a{
+  color: white;
+  text-decoration: none;
+  margin: 0 25px;
+}
+a:hover{
+  color: grey;
+}

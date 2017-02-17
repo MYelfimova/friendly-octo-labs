@@ -4,12 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/styles.css">
   <title>Document</title>
 </head>
 <body>
   <div id="block-center">
-    <a href="/count-words">Count words</a>
+    <a href="/count-words" style="float:right">Count words</a>
+    <a href="/">Home</a>
     <p id="result">{{}}</p>
+    <ul>
+      <% for(var i = 0; i < collection.length; i++){ %>
+        <li class="item">слово: <%=collection[i].word %> зустрічається <%=collection[i].quantity %> разів</li>
+      <% } %>
+    </ul>
   </div>
 </body>
 </html>

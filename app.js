@@ -6,16 +6,22 @@ var readAndCount = require('./scripts/readAndCount.js');
 
 var app = express();
 app.set('view engine', 'ejs');
+
+/*SERVE STATIC CONTENT*/
+app.use(express.static('./styles'));
+
 app.set('port', process.env.PORT || 3000);
 
-console.log(greetings.sayHelloInEnglish());
-console.log(readAndCount.readFile());
+var collection = readAndCount.readFile();
+//console.log(typeof(collection));
 
+
+//
 app.get('/count-words', function(req, res) {
-  res.render('index');
+  res.render('index', {collection: collection});
 });
 app.get('/', function(req, res) {
-  res.render('index');
+  res.render('index', {collection: {}});
 });
 
 
