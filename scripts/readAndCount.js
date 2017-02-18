@@ -1,18 +1,18 @@
 var fs = require('fs');
 
-module.exports = exports  = {};
-exports.readFile = function(){
-  var arr = [], arrWords = [], arrAmount = []; words = {};
+//module.exports = exports  = {};
+module.exports.readFile = function(){
+  var arr = [], arrWords=[], arrAmount = []; words = {};
   fs.readFile('text.txt', 'utf8', function(err, text){
     text = text.replace(/(?:\r\n|\r|\n)/g, ' ');
     text = text.replace(/[.,;:]/g, '').toLowerCase();
 
     arr = text.split(' ');
-    var mass = makeObjectStatistic(arr);
-    console.log(typeof(mass));
-
-    return mass;
+    arrWords =  makeObjectStatistic(arr);
+    //console.log(typeof(arrWords));
   });
+  console.log(arrWords);
+  return arrWords;
 }
 function makeObjectStatistic(arr){
   var mass = [], //масив, у який буду записувати об'єкти
@@ -37,5 +37,6 @@ function makeObjectStatistic(arr){
     }
   }
   //console.log(mass);
+  //console.log(typeof(mass));
   return mass;
 }

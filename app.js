@@ -1,7 +1,7 @@
 var express = require('express');
 var ejs = require('ejs');
-var greetings = require('./scripts/greetings.js');
-var readAndCount = require('./scripts/readAndCount.js');
+var fs = require('fs');
+var readAndCount = require('./scripts/readAndCount.js').readFile;
 
 
 var app = express();
@@ -12,16 +12,17 @@ app.use(express.static('./styles'));
 
 app.set('port', process.env.PORT || 3000);
 
-var collection = readAndCount.readFile();
-//console.log(typeof(collection));
+var colltion = readAndCount();
+//console.log(typeof(colltion));
+//console.log(colltion);
 
 
 //
 app.get('/count-words', function(req, res) {
-  res.render('index', {collection: collection});
+  res.render('count-words', {collection: colltion});
 });
 app.get('/', function(req, res) {
-  res.render('index', {collection: {}});
+  res.render('index');
 });
 
 

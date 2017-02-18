@@ -11,7 +11,12 @@
   <div id="block-center">
     <a href="/count-words" style="float:right">Count words</a>
     <a href="/">Home</a>
-    <p id="result">hi! click 'Count words' to count the words in your text</p>
+    <p id="result"></p>
+    <ul>
+      <% for(item in collection){ %>
+        <li class="item">слово: <%=item['word'] %> зустрічається <%=item['quantity'] %> разів</li>
+      <% } %>
+    </ul>
   </div>
 </body>
 </html>
