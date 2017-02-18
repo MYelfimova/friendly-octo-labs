@@ -1,6 +1,5 @@
 var express = require('express');
 var ejs = require('ejs');
-var fs = require('fs');
 var readAndCount = require('./scripts/readAndCount.js').readFile;
 
 
@@ -12,14 +11,10 @@ app.use(express.static('./styles'));
 
 app.set('port', process.env.PORT || 3000);
 
-var colltion = readAndCount();
-//console.log(typeof(colltion));
-//console.log(colltion);
+var collection = readAndCount();
 
-
-//
 app.get('/count-words', function(req, res) {
-  res.render('count-words', {collection: colltion});
+  res.render('count-words', {collection: collection});
 });
 app.get('/', function(req, res) {
   res.render('index');

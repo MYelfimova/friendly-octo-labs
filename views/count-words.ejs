@@ -13,8 +13,9 @@
     <a href="/">Home</a>
     <p id="result"></p>
     <ul>
-      <% for(item in collection){ %>
-        <li class="item">слово: <%=item['word'] %> зустрічається <%=item['quantity'] %> разів</li>
+      <% for(var item of collection){ %>
+        <!-- <li class="item"><%= item %></li> -->
+        <li class="item">the word: <span class="up"><%= item['word'] %></span> is mentioned <span  class="up"><%= item['quantity'] %></span> time(s)</li>
       <% } %>
     </ul>
   </div>

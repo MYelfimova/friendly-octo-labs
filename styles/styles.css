@@ -19,3 +19,31 @@ a{
 a:hover{
   color: grey;
 }
+
+ul{
+  text-transform: none;
+  color: white;
+  font-family: Helvetica;
+  font-size: 20px;
+  list-style-type: none;
+}
+.up{
+  text-transform: uppercase;
+  color: #0c0f2f;
+}
+@media screen and (min-width: 480px) {
+  body{
+    min-width: 520px;
+  }
+  #block-center{
+    margin: 200px 50px;
+  }
+}
+@media screen and (min-width: 800px) {
+  body{
+    min-width: 800px;
+  }
+  #block-center{
+    margin: 200px 100px;
+  }
+}
